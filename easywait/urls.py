@@ -20,6 +20,8 @@ from django.shortcuts import redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),                # Admin interface
-    path('accounts/', include('accounts.urls')),    # Include app-level URLs
-    path('', lambda request: redirect('register_user')),  # Redirect root URL to register page
+    path('', include('accounts.urls')),    # Include app-level URLs
+    path('user_sessions/', include('user_sessions.urls')),
+    path('printing/', include('printing.urls')),
+    path('locais/', include('locais.urls')),
 ]
