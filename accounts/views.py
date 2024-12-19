@@ -26,9 +26,11 @@ def register_user(request):
         user = Users.objects.create(
             registo=registo,
             user=nome_completo[:3] + str(registo.id),
-            palavra_passe='password123'  # Replace with generated password
+            palavra_passe='password123'  # Replace with generated password mudar isto wtf
         )
         messages.success(request, f"Registered successfully! Username: {user.user}, Password: password123")
         return redirect('login')
 
     return render(request, 'accounts/register.html')
+
+
